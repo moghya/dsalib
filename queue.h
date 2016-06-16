@@ -16,33 +16,32 @@
 namespace dsa
 {
     
-    template<class type>
-    class qnode
-    {
-        public :
-        qnode *prev;
-        type data;
-        qnode *next;
-
-        qnode()
-        {
-            prev = NULL;
-            next = NULL;
-        }
-
-        qnode(type param)
-        {
-            prev = NULL;
-            data = param;
-            next = NULL;
-        }
-    };
+    
 
     template<class type>
     class queue
     {
         private:
-            qnode<type> *front,*rear;        
+            struct qnode
+            {
+                qnode *prev;
+                type data;
+                qnode *next;
+
+                qnode()
+                {
+                    prev = NULL;
+                    next = NULL;
+                }
+
+                qnode(type param)
+                {
+                    prev = NULL;
+                    data = param;
+                    next = NULL;
+                }
+            };
+            qnode *front,*rear;        
             long long int count;
             
             /*
@@ -50,9 +49,9 @@ namespace dsa
                 Pre: param of type type to create qnode 
                 Post: qnode created
              */
-            qnode<type>* create_qnode(type param)
+            qnode* create_qnode(type param)
             {
-                qnode<type> *temp = new qnode<type>(param);
+                qnode *temp = new qnode(param);
                 return temp;       
             }
 
@@ -71,7 +70,7 @@ namespace dsa
              */
             type enqueue(type param)
             {
-                qnode<type> *temp = create_qnode(param);
+                qnode *temp = create_qnode(param);
                 if(count==0)
                 {
                     front = temp;
@@ -98,7 +97,7 @@ namespace dsa
             type dequeue()
             {
                 type param;
-                qnode<type> *temp;
+                qnode *temp;
                 if(count>0)
                 {
                     if(count==1)
@@ -168,7 +167,7 @@ namespace dsa
                 clear();
                 if(from.size()>0)
                 {
-                    qnode<type> *temp= from.front;
+                    qnode *temp= from.front;
                     while(temp!=from.rear)
                     {
                         enqueue(temp->data);

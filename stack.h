@@ -19,33 +19,34 @@
 namespace dsa
 {
     
-    template<class type>
-    class snode
-    {
-        public :
-        snode *prev;
-        type data;
-        snode *next;
+    
 
-        snode()
-        {
-            prev = NULL;
-            next = NULL;
-        }
-
-        snode(type param)
-        {
-            prev = NULL;
-            data = param;
-            next = NULL;
-        }
-    };
 
     template<class type>
     class stack
     {
         private:
-            snode<type> *top  ;      
+            struct snode
+            {
+                
+                snode *prev;
+                type data;
+                snode *next;
+
+                snode()
+                {
+                    prev = NULL;
+                    next = NULL;
+                }
+
+                snode(type param)
+                {
+                    prev = NULL;
+                    data = param;
+                    next = NULL;
+                }
+            };
+            snode *top  ;      
             long long int count;
             
             /*
@@ -53,9 +54,9 @@ namespace dsa
             Pre: param of type type to create qnode 
             Post: qnode created
             */
-            snode<type>* create_snode(type param)
+            snode* create_snode(type param)
             {
-               snode<type> *temp = new snode<type>(param);
+               snode *temp = new snode(param);
                return temp;       
             }
 
@@ -74,7 +75,7 @@ namespace dsa
              */
             type push(type param)
             {
-                snode<type> *temp = create_snode(param);
+                snode *temp = create_snode(param);
                 if(count==0)
                 {
                    top = temp;
@@ -101,7 +102,7 @@ namespace dsa
                 
                 if(count>0)
                 {   
-                    snode<type> *temp=top->prev;
+                    snode *temp=top->prev;
                     if(count==1)
                     {
                         param = top->data;

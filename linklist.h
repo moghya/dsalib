@@ -15,44 +15,42 @@
 namespace dsa
 {
     template<class type>
-    class lnode
-    {
-        public :
-        lnode<type> *prev;
-        type data;
-        lnode<type> *next;
-
-        lnode()
-        {
-            prev = NULL;
-            next= NULL;
-        }
-
-        lnode(type param)
-        {
-            prev = NULL;
-            data = param;
-            next = NULL;
-        }
-    };
-
-
-    template<class type>
     class linklist
     {
         private:
-            /*  
-             * Function: creates lnode<type> of type type
-             * Pre: param of type type to create lnode<type>
-             * Post: lnode<type> created
-             */
-            lnode<type>* create_lnode(type param)
+            struct lnode
             {
-                lnode<type> *temp = new lnode<type>(param);
+                
+                lnode *prev;
+                type data;
+                lnode *next;
+
+                lnode()
+                {
+                    prev = NULL;
+                    next= NULL;
+                }
+
+                lnode(type param)
+                {
+                    prev = NULL;
+                    data = param;
+                    next = NULL;
+                }
+            };
+            
+            /*  
+             * Function: creates lnode of type type
+             * Pre: param of type type to create lnode
+             * Post: lnode created
+             */
+            lnode* create_lnode(type param)
+            {
+                lnode *temp = new lnode(param);
                 return temp;       
             }
 
-            lnode<type> *start,*last;        
+            lnode *start,*last;        
             long long int count;        
             
         public:
@@ -77,7 +75,7 @@ namespace dsa
             }
             
             /*
-             * Function: Removes all lnode<type>s and makes list empty
+             * Function: Removes all lnodes and makes list empty
              * Pre: none
              * Post: none
              */
@@ -110,7 +108,7 @@ namespace dsa
                 clear();
                 if(from.size()>0)
                 {
-                    lnode<type> *temp= from.start;
+                    lnode *temp= from.start;
                     while(temp!=from.last)
                     {
                         add_back(temp->data);
@@ -130,7 +128,7 @@ namespace dsa
             {
                 if(index>=0&&index<count)
                 {
-                    lnode<type> *temp = start;
+                    lnode *temp = start;
                     long long int counter = 0;             
                     while(counter<index)
                     {
@@ -142,14 +140,14 @@ namespace dsa
             }            
             
             /*
-             * Function: adds lnode<type> into list at end
+             * Function: adds lnode into list at end
              * Pre: param of type type to add into list
              * Post: param added into list at the last                 
              */
             void add_back(type param)
             {
 
-                lnode<type> *temp = create_lnode(param);     
+                lnode *temp = create_lnode(param);     
                 if(start == NULL)
                 {
                     temp->prev = NULL;                      
@@ -169,13 +167,13 @@ namespace dsa
             }
 
             /*
-             * Function: adds lnode<type> into list at front
+             * Function: adds lnode into list at front
              * Pre: param of type type to add into list
              * Post: param added into list at the front
              */
             void add_front(type param)
             {
-                lnode<type> *temp = create_lnode(param);
+                lnode *temp = create_lnode(param);
                 if(start == NULL)
                 {
                     temp->prev = NULL;                      
@@ -195,15 +193,15 @@ namespace dsa
             }            
 
             /*
-             * Function: deletes first lnode<type> from list
+             * Function: deletes first lnode from list
              * Pre: none
-             * Post: deletes first lnode<type> 
+             * Post: deletes first lnode 
              */               
             void pop_front()
             {
                 if(count>0)
                 {  
-                    lnode<type> *temp = start,*another_temp;
+                    lnode *temp = start,*another_temp;
                     if(count==1)
                     {
                         delete temp;
@@ -230,15 +228,15 @@ namespace dsa
             }
 
             /*
-             * Function: deletes last lnode<type> from list
+             * Function: deletes last lnode from list
              * Pre: none
-             * Post: deletes last lnode<type>
+             * Post: deletes last lnode
              */ 
             void pop_back()
             {
                 if(count>0)
                 {
-                    lnode<type> *temp = last,*another_temp;
+                    lnode *temp = last,*another_temp;
                     if(count==1)
                     {
                         delete temp;
@@ -266,9 +264,9 @@ namespace dsa
             }
 
             /*
-             * Function: deletes lnode<type> from list
-             * Pre: index of lnode<type> to delete
-             * Post: deletes lnode<type> at index 
+             * Function: deletes lnode from list
+             * Pre: index of lnode to delete
+             * Post: deletes lnode at index 
              */               
             void remove_at(long long int index)
             {
@@ -288,7 +286,7 @@ namespace dsa
                         return;
                     }
                     
-                    lnode<type> *temp = start,*another_temp;
+                    lnode *temp = start,*another_temp;
                     long long int counter = 1;             
                     while(counter<index)
                     {
@@ -311,7 +309,7 @@ namespace dsa
             void traverse(void (fun)(type obj))
             {
                 long long int i;
-                lnode<type> *temp=start;
+                lnode *temp=start;
                 for(i=0;i<count;i++)
                 {                  
                     fun(temp->data);

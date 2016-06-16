@@ -18,63 +18,61 @@
 
 namespace dsa
 {
-    template<class type>
-    class tnode
-    {
-        public:
-            tnode<type>   *left,*right;
-            type    data;            
-
-            tnode()
-            {
-                left = NULL;
-                right= NULL;
-            }
-
-            tnode(type param)
-            {
-                left = NULL;
-                right= NULL;
-                data = param;
-            }
-            
-            
-    };
     
+
     template<class type>
     class bstree
     {
-        private:
+        private:            
+            struct tnode
+            {
+
+                tnode   *left,*right;
+                type    data;            
+
+                tnode()
+                {
+                    left = NULL;
+                    right= NULL;
+                }
+
+                tnode(type param)
+                {
+                    left = NULL;
+                    right= NULL;
+                    data = param;
+                }
+            };
                         
             /*
-            Function: creates tnode<type> of type type
-            Pre: param of type type to create tnode<type> 
-            Post: tnode<type> created
+            Function: creates tnode of type type
+            Pre: param of type type to create tnode 
+            Post: tnode created
             */
-            tnode<type>* create_tnode(type param)
+            tnode* create_tnode(type param)
             {
-               tnode<type> *temp = new tnode<type>(param);
+               tnode *temp = new tnode(param);
                return temp;       
             } 
             
-            tnode<type> *root;
+            tnode *root;
             long long int count;                    
             
-            tnode<type>* _find_min(tnode<type>* temp)
+            tnode* _find_min(tnode* temp)
             {
                 if(temp==NULL)          return NULL;                
                 if(temp->left==NULL)    return temp;
                 return _find_min(temp->left);
             }
             
-            tnode<type>* _find_max(tnode<type>* temp)
+            tnode* _find_max(tnode* temp)
             {
                 if(temp==NULL)          return NULL;
                 if(temp->right==NULL)   return temp;
                 return _find_max(temp->right);
             }
            
-            bool _insert(tnode<type> *troot,tnode<type> *temp)
+            bool _insert(tnode *troot,tnode *temp)
             {
                 if(temp->data < troot->data)
                 {
@@ -101,7 +99,7 @@ namespace dsa
                 
             }
             
-            tnode<type>* _remove(tnode<type> *troot,type param)
+            tnode* _remove(tnode *troot,type param)
             {    
                 
                 if( troot == NULL )             return troot;                
@@ -119,7 +117,7 @@ namespace dsa
                         
                         if(troot->left==NULL)
                         {
-                            tnode<type> *temp = troot;
+                            tnode *temp = troot;
                             troot=troot->right;
                             delete temp;  count--;                          
                         }
@@ -127,7 +125,7 @@ namespace dsa
                         {   
                             if(troot->right==NULL)
                             {
-                                tnode<type> *temp = troot;
+                                tnode *temp = troot;
                                 troot=troot->left;
                                 delete temp; count--;
                             }
@@ -142,14 +140,14 @@ namespace dsa
                 return troot;
             }   
             
-            void _clear(tnode<type> *temp)
+            void _clear(tnode *temp)
             {
                 if(temp==NULL) return;                
                 _clear(temp->left);
                 _clear(temp->right);
                 remove(temp->data);
             }
-            void _inorder(tnode<type> *temp,void (fun)(type obj))
+            void _inorder(tnode *temp,void (fun)(type obj))
             {               
                 if(temp==NULL) return;
                 
@@ -157,8 +155,8 @@ namespace dsa
                 fun(temp->data);
                 _inorder(temp->right,fun);
             }
-        
-            void _preorder(tnode<type> *temp,void (fun)(type obj))
+
+            void _preorder(tnode *temp,void (fun)(type obj))
             {   
                 if(temp==NULL) return;                
                
@@ -168,7 +166,7 @@ namespace dsa
                 
             }
             
-            void _postorder(tnode<type> *temp,void (fun)(type obj))
+            void _postorder(tnode *temp,void (fun)(type obj))
             {               
                 if(temp==NULL) return;                
                 
@@ -184,8 +182,7 @@ namespace dsa
                 root = NULL;
                 count=0;
             }
-            
-            
+                       
             
             type find_min()
             {
@@ -199,7 +196,7 @@ namespace dsa
             
             bool insert(type param)
             {                
-                tnode<type> *temp=create_tnode(param);
+                tnode *temp=create_tnode(param);
                 if(root==NULL)
                 {
                    root=temp;
@@ -257,17 +254,7 @@ namespace dsa
                 _postorder(root,fun);
             }
             
-            void copy(type param)
-            {
-                insert(param);
-            }
-            
-            void operator=(bstree<type> from)
-            {
-                clear();
-                from.preorder(copy);
-                
-            }
+
     };
 
 

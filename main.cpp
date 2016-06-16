@@ -62,15 +62,41 @@ int main(int argc, char** argv) {
 
     stud obj;    
     bstree<int> bt,abt;
-    
     bt.insert(1);
     bt.insert(2);
     bt.insert(3);
     bt.insert(4);
     
-    bt.preorder(fun);
-    abt=bt;
-    abt.preorder(fun);
+    bt.postorder(fun);
+    bt.remove(3);
+    bt.postorder(fun);
+    
+    linklist<int> l;
+    
+    l.add_back(1);
+    l.add_back(2);
+    l.add_back(3);
+    l.add_back(4);
+    
+    l.remove_at(1);
+    
+    l.traverse(fun);
+    
+    queue<int> p,q;
+    q.enqueue(1);
+    q.enqueue(2);
+    q.enqueue(3);
+    q.enqueue(4);
+    
+    p=q;
+    
+    cout<<p.size();
+    
+    
+    stack<int> a;
+    
+    if(a.isempty())
+    cout<<"yes";
     
     
      return 0;

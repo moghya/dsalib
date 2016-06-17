@@ -16,162 +16,136 @@
 
 
 
-namespace dsa
-{
-    
-    
-
+namespace dsa {
 
     template<class type>
-    class stack
-    {
-        private:
-            struct snode
-            {
-                
-                snode *prev;
-                type data;
-                snode *next;
+    class stack {
+    private:
 
-                snode()
-                {
-                    prev = NULL;
-                    next = NULL;
-                }
+        struct snode {
+            snode *prev;
+            type data;
+            snode *next;
 
-                snode(type param)
-                {
-                    prev = NULL;
-                    data = param;
-                    next = NULL;
-                }
-            };
-            snode *top  ;      
-            long long int count;
-            
-            /*
-            Function: creates qnode of type type
-            Pre: param of type type to create qnode 
-            Post: qnode created
-            */
-            snode* create_snode(type param)
-            {
-               snode *temp = new snode(param);
-               return temp;       
+            snode() {
+                prev = NULL;
+                next = NULL;
             }
 
-        public:
-               
-            stack()
-            {
-                top = NULL;
-                count = 0;
-            }    
-            
-            /*
-             * Function: Pushes element on stack
-             * Pre: param element of type type
-             * Post: element added 
-             */
-            type push(type param)
-            {
-                snode *temp = create_snode(param);
-                if(count==0)
-                {
-                   top = temp;
-                }
-                else
-                {
-                    top->next = temp;
-                    temp->prev = top;
-                    top = temp;
-                    
-                }
-                count++;
-                return top->data;
+            snode(type param) {
+                prev = NULL;
+                data = param;
+                next = NULL;
             }
+        };
+        snode *top;
+        long long int count;
 
-            /*
-             * Function: Pop element from stack
-             * Pre: none
-             * Post: element removed 
-             */
-            type pop()
-            {
-                type param;
-                
-                if(count>0)
-                {   
-                    snode *temp=top->prev;
-                    if(count==1)
-                    {
-                        param = top->data;
-                        delete top;
-                        top = NULL;
-                    }
-                    else
-                    {
-                        param = top->data;
-                        temp->next= NULL;
-                        delete top;
-                        top = temp;
-                    }
-                    count--;
-                }
-                return param;
+        /*
+        Function: creates qnode of type type
+        Pre: param of type type to create qnode 
+        Post: qnode created
+         */
+        snode* create_snode(type param) {
+            snode *temp = new snode(param);
+            return temp;
+        }
+
+    public:
+
+        stack() {
+            top = NULL;
+            count = 0;
+        }
+
+        /*
+         * Function: Pushes element on stack
+         * Pre: param element of type type
+         * Post: element added
+         */
+        type push(type param) {
+            snode *temp = create_snode(param);
+            if (count == 0) {
+                top = temp;
+            } else {
+                top->next = temp;
+                temp->prev = top;
+                top = temp;
+
             }
-            
-            
-            /*
-             * Function: gives top element
-             * Pre: none
-             * Post: top element returned
-             */
-            type top_element()
-            {
-                type param;
-                if(count>0)
+            count++;
+            return top->data;
+        }
+
+        /*
+         * Function: Pop element from stack
+         * Pre: none
+         * Post: element removed 
+         */
+        type pop() {
+            type param;
+
+            if (count > 0) {
+                snode *temp = top->prev;
+                if (count == 1) {
                     param = top->data;
-                
-                return param;
-            }            
+                    delete top;
+                    top = NULL;
+                } else {
+                    param = top->data;
+                    temp->next = NULL;
+                    delete top;
+                    top = temp;
+                }
+                count--;
+            }
+            return param;
+        }
 
-            
-            /*
-             * Function: no of elements in stack
-             * Pre: none
-             * Post: size returned 
-             */
-            long long int size()
-            {
-                return count;
+        /*
+         * Function: gives top element
+         * Pre: none
+         * Post: top element returned
+         */
+        type top_element() {
+            type param;
+            if (count > 0)
+                param = top->data;
+
+            return param;
+        }
+
+        /*
+         * Function: no of elements in stack
+         * Pre: none
+         * Post: size returned 
+         */
+        long long int size() {
+            return count;
+        }
+
+        /*
+         * Function: checks if empty
+         * Pre: none
+         * Post: true if isempty else false
+         */
+        bool isempty() {
+            if (count == 0)
+                return true;
+            else
+                return false;
+        }
+
+        /*
+         * Function: Removes all elements from stack
+         * Pre: none
+         * Post: stack empty
+         */
+        void clear() {
+            while (count != 0) {
+                pop();
             }
-                        
-            /*
-             * Function: checks if empty
-             * Pre: none
-             * Post: true if isempty else false
-             */
-            bool isempty()
-            {
-                if(count==0)
-                    return true;
-                else
-                    return false;
-            }
-            
-            /*
-             * Function: Removes all elements from stack
-             * Pre: none
-             * Post: stack empty
-             */
-            void clear()
-            {
-                while(count!=0)
-                {
-                    pop();
-                }            
-            }
+        }
     };
 }
 #endif /* STACK_H */

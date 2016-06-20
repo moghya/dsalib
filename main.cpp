@@ -18,6 +18,7 @@
 #include "stack.h"
 #include "alginc.h"
 #include "tree.h"
+#include "array.h"
 using namespace std;
 using namespace dsa;
  
@@ -62,12 +63,18 @@ int main(int argc, char** argv) {
 
     stud obj;    
     bstree<int> bt,abt;
-    bt.insert(1);
-    bt.insert(2);
-    bt.insert(3);
-    bt.insert(4);
+
     
-    bt.postorder(fun);
+    bt.insert(2);
+    bt.insert(1);
+    bt.insert(3);
+
+    
+    
+    bt.bfs(fun);
+   
+    
+    /*bt.postorder(fun);
     bt.remove(3);
     bt.postorder(fun);
     
@@ -97,6 +104,7 @@ int main(int argc, char** argv) {
     
     if(a.isempty())
     cout<<"yes";
+    */
     
     
      return 0;

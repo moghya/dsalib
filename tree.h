@@ -14,6 +14,7 @@
 #ifndef TREE_H
 #define TREE_H
 #include <iostream>
+#include "queue.h"
 
 
 namespace dsa
@@ -147,6 +148,7 @@ namespace dsa
                 _clear(temp->right);
                 remove(temp->data);
             }
+            
             void _inorder(tnode *temp,void (fun)(type obj))
             {               
                 if(temp==NULL) return;
@@ -175,6 +177,21 @@ namespace dsa
                 fun(temp->data);
             }
             
+            void _bfs(void (fun) (type obj))
+            {
+                queue<tnode*> q;
+                if(root!=NULL)
+                {
+                    q.enqueue(root);
+                    while(!q.isempty())
+                    {
+                        fun(q.front_element()->data);
+                        q.enqueue(q.front_element()->left);
+                        q.enqueue(q.front_element()->right);
+                        q.dequeue();
+                    }
+                }                
+            }
         public:
             
             bstree()
@@ -254,7 +271,19 @@ namespace dsa
                 _postorder(root,fun);
             }
             
+            void bfs(void (fun) (type obj))
+            {
+                _bfs(fun);
+            }
+            
 
+    };
+    
+    
+    template<class type>
+    class avltree
+    {
+    
     };
 
 

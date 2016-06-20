@@ -16,7 +16,19 @@
 
 namespace dsa
 {
-
+    template<class type>
+    class array
+    {
+        private:
+            long long int count;
+        
+        public:
+            array()
+            {
+            
+            }
+    
+    };
 }
 #endif /* ARRAY_H */
 

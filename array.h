@@ -20,14 +20,41 @@ namespace dsa
     class array
     {
         private:
-            long long int count;
-        
+            long long int count,elsize;
+            type *start,*end,*objs;          
         public:
-            array()
-            {
             
+            array(long long int size)
+            {    
+                count = size;
+                elsize = sizeof(type);
+                objs = new type[size];
+                start = objs;
+                end =  objs+size*elsize;
             }
-    
+
+            array()
+            {    
+                count = 0;
+                elsize = sizeof(type);
+                objs = new type[size];
+                start = objs;
+                end =  objs+size*elsize;
+            }
+            
+            type &operator[](long long int index)
+            {
+                if(index>=0&&index<count)
+                {
+                    return objs[index];
+                }            
+            }
+            
+            long long int size()
+            {
+                return count;
+            }
+                      
     };
 }
 #endif /* ARRAY_H */

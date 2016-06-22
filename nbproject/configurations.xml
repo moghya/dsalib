@@ -6,8 +6,13 @@
                    projectFiles="true">
       <itemPath>alginc.h</itemPath>
       <itemPath>array.h</itemPath>
+      <itemPath>avltree.h</itemPath>
+      <itemPath>bstree.h</itemPath>
+      <itemPath>dsa.h</itemPath>
       <itemPath>linklist.h</itemPath>
+      <itemPath>mergesort.h</itemPath>
       <itemPath>queue.h</itemPath>
+      <itemPath>quicksort.h</itemPath>
       <itemPath>sort.h</itemPath>
       <itemPath>stack.h</itemPath>
       <itemPath>tree.h</itemPath>
@@ -33,6 +38,7 @@
       <itemPath>Makefile</itemPath>
     </logicalFolder>
     <itemPath>dumb.txt</itemPath>
+    <itemPath>haha.txt</itemPath>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -48,13 +54,25 @@
       </item>
       <item path="array.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="avltree.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="bstree.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dsa.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="dumb.txt" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="haha.txt" ex="false" tool="3" flavor2="0">
       </item>
       <item path="linklist.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="mergesort.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="queue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="quicksort.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="sort.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -87,13 +105,25 @@
       </item>
       <item path="array.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="avltree.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="bstree.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dsa.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="dumb.txt" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="haha.txt" ex="false" tool="3" flavor2="0">
       </item>
       <item path="linklist.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="mergesort.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="queue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="quicksort.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="sort.h" ex="false" tool="3" flavor2="0">
       </item>

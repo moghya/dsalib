@@ -5,14 +5,16 @@
  */
 
 /* 
- * File:   sort.h
+ * File:   quicksort.h
  * Author: moghya_s
  *
- * Created on June 15, 2016, 8:15 AM
+ * Created on June 18, 2016, 9:58 PM
  */
 
-#ifndef SORT_H
-#define SORT_H
-#include "mergesort.h"
-#endif /* SORT_H */
+#ifndef QUICKSORT_H
+#define QUICKSORT_H
+
+
+
+#endif /* QUICKSORT_H */
 

@@ -1,4 +1,44 @@
+    bstree<int> bt,abt;
 
+    
+    bt.insert(2);   
+    bt.insert(1);    
+    bt.insert(3);
+    bt.insert(4);
+
+    bt.inorder(fun);
+   
+   
+    /*
+    linklist<int> l;
+    
+    l.add_back(1);
+    l.add_back(2);
+    l.add_back(3);
+    l.add_back(4);
+    
+    l.remove_at(1);
+    
+    l.traverse(fun);
+    
+    queue<int> p,q;
+    cout<<q.enqueue(1);
+    cout<<q.enqueue(2);
+    cout<<q.enqueue(3);
+    cout<<q.enqueue(4);
+    
+    p=q;
+    
+    cout<<p.size();
+    p.clear();
+    cout<<p.size();
+    
+    /*
+    stack<int> a;
+    
+    if(a.isempty())
+    cout<<"yes";
+    */  
 
 
 

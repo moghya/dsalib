@@ -13,12 +13,9 @@
 
 #include <cstdlib>
 #include <iostream>
-#include "linklist.h"
-#include "queue.h"
-#include "stack.h"
-#include "alginc.h"
-#include "tree.h"
-#include "array.h"
+#include "dsa.h"
+#include "mergesort.h"
+
 using namespace std;
 using namespace dsa;
  
@@ -38,12 +35,10 @@ class stud
     }
     bool operator <(const stud& d)
     {
-       if(id < d.id)
-       {
-          return true;
-       }
-       
-       return false;
+        if(id < d.id)
+            return true;
+        else
+            return false;
     }
     
 };
@@ -53,6 +48,7 @@ bool haha(int val)
     if(val>=3) return true;
     else return false;
 }
+
 void fun (int obj)
 {
     cout<<obj<<" ";
@@ -60,52 +56,21 @@ void fun (int obj)
 
 
 int main(int argc, char** argv) {
-
-    stud obj;    
-    bstree<int> bt,abt;
-
     
-    bt.insert(2);
-    bt.insert(1);
-    bt.insert(3);
+    array<int> a(5);
+    long long int i,j;
+    
+      
+    for(i=0;i<5;i++)
+        a[i]=60/(i+1);
+    
+    for(i=0;i<5;i++)
+        cout<<a[i]<<" ";
+    
+    mergesort(a,5,0,4);
 
-    
-    
-    bt.bfs(fun);
    
-    
-    /*bt.postorder(fun);
-    bt.remove(3);
-    bt.postorder(fun);
-    
-    linklist<int> l;
-    
-    l.add_back(1);
-    l.add_back(2);
-    l.add_back(3);
-    l.add_back(4);
-    
-    l.remove_at(1);
-    
-    l.traverse(fun);
-    
-    queue<int> p,q;
-    q.enqueue(1);
-    q.enqueue(2);
-    q.enqueue(3);
-    q.enqueue(4);
-    
-    p=q;
-    
-    cout<<p.size();
-    
-    
-    stack<int> a;
-    
-    if(a.isempty())
-    cout<<"yes";
-    */
-    
-    
-     return 0;
+    for(i=0;i<5;i++)
+        cout<<a[i]<<" ";
+    return 0;
 }

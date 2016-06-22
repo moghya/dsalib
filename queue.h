@@ -23,20 +23,18 @@ namespace dsa
     {
         private:
             struct qnode
-            {
-                qnode *prev;
+            {               
                 type data;
                 qnode *next;
 
                 qnode()
                 {
-                    prev = NULL;
                     next = NULL;
                 }
 
                 qnode(type param)
                 {
-                    prev = NULL;
+                    
                     data = param;
                     next = NULL;
                 }
@@ -75,13 +73,11 @@ namespace dsa
                 {
                     front = temp;
                     rear  = temp;
-                    temp->prev = rear;
-                    temp->next = front;
+                    front->next = rear;
                 }
                 else
                 {
-                    rear->next = temp;
-                    temp->next = front;
+                    rear->next = temp;                   
                     rear = temp;
                     
                 }
@@ -111,8 +107,7 @@ namespace dsa
                     else
                     {
                         param = front -> data;
-                        temp = front -> next;
-                        temp -> prev = rear;
+                        temp = front -> next;                       
                         delete front;
                         front = temp; 
                     }

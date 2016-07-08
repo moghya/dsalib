@@ -7,12 +7,23 @@
       <itemPath>alginc.h</itemPath>
       <itemPath>array.h</itemPath>
       <itemPath>avltree.h</itemPath>
+      <itemPath>binarysearch.h</itemPath>
       <itemPath>bstree.h</itemPath>
+      <itemPath>bubblesort.h</itemPath>
       <itemPath>dsa.h</itemPath>
+      <itemPath>graph.h</itemPath>
+      <itemPath>heap.h</itemPath>
+      <itemPath>heapsort.h</itemPath>
+      <itemPath>insertionsort.h</itemPath>
+      <itemPath>linearsearch.h</itemPath>
       <itemPath>linklist.h</itemPath>
       <itemPath>mergesort.h</itemPath>
       <itemPath>queue.h</itemPath>
       <itemPath>quicksort.h</itemPath>
+      <itemPath>radixsort.h</itemPath>
+      <itemPath>search.h</itemPath>
+      <itemPath>selectionsort.h</itemPath>
+      <itemPath>shellsort.h</itemPath>
       <itemPath>sort.h</itemPath>
       <itemPath>stack.h</itemPath>
       <itemPath>tree.h</itemPath>
@@ -30,6 +41,12 @@
                    displayName="Test Files"
                    projectFiles="false"
                    kind="TEST_LOGICAL_FOLDER">
+      <logicalFolder name="f1"
+                     displayName="New C++ Simple Test"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/newsimpletest.cpp</itemPath>
+      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -56,13 +73,42 @@
       </item>
       <item path="avltree.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="binarysearch.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="bstree.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="bubblesort.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="dsa.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="dumb.txt" ex="false" tool="3" flavor2="0">
       </item>
+      <folder path="TestFiles/f1">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f1</output>
+        </linkerTool>
+      </folder>
+      <item path="graph.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="haha.txt" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="heap.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="heapsort.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="insertionsort.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="linearsearch.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="linklist.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -74,9 +120,19 @@
       </item>
       <item path="quicksort.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="radixsort.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="search.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="selectionsort.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="shellsort.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="sort.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="stack.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/newsimpletest.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tree.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -107,13 +163,42 @@
       </item>
       <item path="avltree.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="binarysearch.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="bstree.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="bubblesort.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="dsa.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="dumb.txt" ex="false" tool="3" flavor2="0">
       </item>
+      <folder path="TestFiles/f1">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f1</output>
+        </linkerTool>
+      </folder>
+      <item path="graph.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="haha.txt" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="heap.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="heapsort.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="insertionsort.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="linearsearch.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="linklist.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -125,9 +210,19 @@
       </item>
       <item path="quicksort.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="radixsort.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="search.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="selectionsort.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="shellsort.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="sort.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="stack.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/newsimpletest.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tree.h" ex="false" tool="3" flavor2="0">
       </item>

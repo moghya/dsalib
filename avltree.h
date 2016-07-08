@@ -25,27 +25,29 @@ namespace dsa
             {
 
                 avltnode   *left,*right;
-                type    data;
+                type        data;
                 long long int ht;
                 
 
                 avltnode()
                 {
-                    ht=0;
+                    ht=-1;
                     left = NULL;
                     right= NULL;
                 }
 
                 avltnode(type param)
                 {
-                    ht=0;
+                    ht=-1;
                     left = NULL;
                     right= NULL;
                     data = param;
                 }
-            };           
+            };
+            
             avltnode *root;
             long long int count;
+            
             avltnode* create_avltnode(type param)
             {
                avltnode *temp = new avltnode(param);
@@ -62,38 +64,34 @@ namespace dsa
             
             void _srotateR(avltnode *troot)
             {
-                avltnode *temp;  
-                
-                temp = troot->left;
-                
-                troot->left = temp->right;
-                
-                temp->right = troot;
-                
-                troot->ht = maxof( _height( troot->left ), _height( troot->right ) ) + 1;
-                
-                temp->ht = maxof( _height( temp->left ), troot->ht ) + 1;         
-                
+                avltnode *temp;                
+               
+                temp = troot->left;                
+                troot->left = temp->right;                
+                temp->right = troot;                
+                troot->ht = maxof( _height( troot->left ), _height( troot->right ) ) + 1;                
+                temp->ht = maxof( _height( temp->left ), troot->ht ) + 1;                
                 troot = temp;
-                
             }
             
             void  _srotateL(avltnode *troot)
             {
-                avltnode *temp;      
+                avltnode *temp;
+                avltnode *temp2;
                 
-                temp = troot->right;
+                temp = troot->right;                
+                troot->right = temp->left;                
                 
-                troot->right = temp->left;
+                temp2->data=troot->data;
+                temp2->ht=troot->ht;
+                temp2->left=troot->left;
+                temp2->right=troot->right;
                 
-                temp->left = troot;
-                
-                troot->ht = maxof( _height( troot->left ),_height( troot->right ) ) + 1;
-                
-                temp->ht = maxof(troot->ht,_height( temp->right )) + 1;      
-                
+                temp->left = temp2;                
+               
+                troot->ht = maxof( _height( troot->left ),_height( troot->right ) ) + 1;                
+                temp->ht = maxof(troot->ht,_height( temp->right )) + 1;                
                 troot = temp;
-                
             }
            
             void  _drotateRL(avltnode *troot)
@@ -106,8 +104,7 @@ namespace dsa
             void  _drotateLR(avltnode *troot)
             {
                 _srotateR(troot->right);
-                _srotateL(troot);
-                
+                _srotateL(troot);               
             }
             
             void  _balance(avltnode *troot)
@@ -118,8 +115,7 @@ namespace dsa
                 long long int tl = _height(troot->left),tr = _height(troot->right);
                 
                 if( tl - tr > IF)
-                {
-                    
+                {                   
                     if( _height(troot->left->left) >= _height(troot->left->right))
                         _srotateR(troot);
                     else
@@ -147,16 +143,10 @@ namespace dsa
                     troot=temp;
                 else
                     if(temp->data < troot->data)
-                        {
                             troot->left = _insert(troot->left,temp);
-                        
-                        }
                     else
-                        {
-                        
-                            troot->right = _insert(troot->right,temp);
-                        }
-
+                            troot->right = _insert(troot->right,temp);  
+               
                _balance(troot);
                return troot;
             }
@@ -214,9 +204,7 @@ namespace dsa
             {
                 _bfs(fun);
             }
-            
-            
-            
+                                  
     
     };
 

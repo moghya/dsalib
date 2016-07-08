@@ -53,7 +53,8 @@ namespace dsa
     template<typename type>
     void mergesort(array<type> arr,long long int size,long long int start,long long int end)
     {
-        if(start<end){
+        if(start<end)
+        {
             long long int middle = (start+end)/2;
             mergesort(arr,size,start,middle);
             mergesort(arr,size,middle+1,end);

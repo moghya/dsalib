@@ -19,6 +19,8 @@
 #include "alginc.h"
 #include "tree.h"
 #include "array.h"
+#include "heap.h"
 #include "sort.h"
+#include "search.h"
 #endif /* DSA_H */
 

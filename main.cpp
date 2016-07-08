@@ -14,7 +14,6 @@
 #include <cstdlib>
 #include <iostream>
 #include "dsa.h"
-#include "mergesort.h"
 
 using namespace std;
 using namespace dsa;
@@ -54,23 +53,15 @@ void fun (int obj)
     cout<<obj<<" ";
 }
 
-
-int main(int argc, char** argv) {
-    
-    array<int> a(5);
-    long long int i,j;
-    
-      
-    for(i=0;i<5;i++)
-        a[i]=60/(i+1);
-    
-    for(i=0;i<5;i++)
-        cout<<a[i]<<" ";
-    
-    mergesort(a,5,0,4);
-
-   
-    for(i=0;i<5;i++)
-        cout<<a[i]<<" ";
+int main(int argc, char** argv)
+{
+    array<int> a(6);
+    a[0]=6;
+    a[1]=3;
+    a[2]=1;    a[3]=0;    a[4]=5;    a[5]=4;
+    heapsort(a);
+    a.traverse(fun);
+    cout<<binarysearch(a,0,5,3);
     return 0;
 }
+

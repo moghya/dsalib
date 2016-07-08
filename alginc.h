@@ -25,7 +25,7 @@ namespace dsa
     }
 
     template<typename T>
-    inline T maxof(T x, T y)
+    inline T maxof(T &x, T &y)
     {
         T max;
         max = (x > y) ? x : y;

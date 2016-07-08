@@ -14,5 +14,11 @@
 #ifndef SORT_H
 #define SORT_H
 #include "mergesort.h"
+#include "selectionsort.h"
+#include "insertionsort.h"
+#include "quicksort.h"
+#include "bubblesort.h"
+#include "shellsort.h"
+#include "heapsort.h"
 #endif /* SORT_H */
 

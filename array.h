@@ -20,41 +20,49 @@ namespace dsa
     class array
     {
         private:
-            long long int count,elsize;
-            type *start,*end,*objs;          
+            long long int count,capacity;
+            type *objs;        
         public:
             
             array(long long int size)
             {    
                 count = size;
-                elsize = sizeof(type);
-                objs = new type[size];
-                start = objs;
-                end =  objs+size*elsize;
+                capacity=size;
+                objs = new type[capacity];                
             }
-
-            array()
-            {    
-                count = 0;
-                elsize = sizeof(type);
-                objs = new type[size];
-                start = objs;
-                end =  objs+size*elsize;
-            }
-            
+                                    
             type &operator[](long long int index)
             {
                 if(index>=0&&index<count)
                 {
                     return objs[index];
                 }            
+            }            
+            
+            void reverse(long long int start,long long int end)
+            {
+                if(start>=0&&start<count&&end>=0&&end<count)
+                {   
+                    while(start<end/2)
+                    {
+                        swapit(objs[start],objs[end-start]);
+                        start++;
+                    }
+                }
             }
             
             long long int size()
             {
                 return count;
             }
-                      
+
+            void traverse(void (fun)(type obj))
+            {
+                long long int i;
+                for(i=0;i<count;i++)
+                    fun(objs[i]);
+                   
+            }
     };
 }
 #endif /* ARRAY_H */
